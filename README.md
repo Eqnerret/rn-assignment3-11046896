@@ -29,7 +29,7 @@ This is a simple task manager app built using React Native. It allows users to v
 ## Screenshots
 
 ### Android Screenshot
-![Android Screenshot](img/andriodscreenshot.jpg)
+![Android Screenshot](andriodscreenshot.jpg)
 
 ### PC Screenshot
-![PC Screenshot](img/Pcscreenshot.png)
+![PC Screenshot](Pcscreenshot.png)
