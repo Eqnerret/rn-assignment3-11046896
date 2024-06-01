@@ -22,6 +22,29 @@ const categories = [
   { id: '8', name: 'Relax', tasks: 7, image: relaxingPicture },
 ];
 
+const taskNames = [
+  'Mobile App Development',
+  'Web Development',
+  'Push Ups',
+  'Cook dinner',
+  'Study React Native',
+  'Complete project report',
+  'Clean the house',
+  'Do the laundry',
+  'Buy groceries',
+  'Watch a movie',
+  'Practice coding',
+  'Call a friend',
+  'Meditate',
+  'Plan the week',
+  'Exercise'
+];
+
+const tasks = taskNames.map((name, index) => ({
+  id: String(index + 1),
+  name,
+}));
+
 const profileImage = require('./img/person.png');
 const filterIcon = require('./img/Filter.png');
 const searchIcon = require('./img/Vector.png');
@@ -55,6 +78,16 @@ const App = () => {
         )}
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.categoriesContainer}
+      />
+      <Text style={styles.sectionTitle}>Ongoing Task</Text>
+      <FlatList
+        data={tasks}
+        renderItem={({ item }) => (
+          <View style={styles.taskCard}>
+            <Text>{item.name}</Text>
+          </View>
+        )}
+        keyExtractor={(item) => item.id}
       />
     </ScrollView>
   );
@@ -126,7 +159,13 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     marginBottom: 10,
-  }
+  },
+  taskCard: {
+    padding: 20,
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    marginBottom: 10,
+  },
 });
 
 export default App;
